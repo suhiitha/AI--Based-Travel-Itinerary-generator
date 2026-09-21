@@ -1,0 +1,237 @@
+/* ============================================================
+   PAYANA — ItineraryDisplay  (Manual Trip Planner Form)
+   Luxury Karnataka Redesign — Dark Espresso + Antique Gold
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ---------- PAGE WRAPPER ---------- */
+.itd {
+  height: calc(100vh - 70px);
+  position: relative;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 20px; /* enough top padding for the fixed navbar */
+  box-sizing: border-box;
+}
+
+/* Full-bleed background photo */
+.itd::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('../images/hampi.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Dark overlay — barely visible photo beneath */
+.itd::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,8,5,0.93) 0%, rgba(26,15,8,0.89) 100%);
+  z-index: 0;
+}
+
+/* ---------- GOLD PROGRESS BAR ---------- */
+.itd__progress-track {
+  position: fixed;
+  top: 70px; /* below navbar */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(184, 134, 11, 0.12);
+  z-index: 100;
+}
+
+.itd__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #B8860B, #C9A227);
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 0 2px 2px 0;
+}
+
+/* ---------- FORM CARD ---------- */
+.itd__card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 660px;
+  background: rgba(26, 15, 8, 0.78);
+  border: 1px solid rgba(194, 178, 128, 0.2);
+  border-top: 3px solid #B8860B;      /* gold crown ribbon */
+  border-radius: 4px 4px 16px 16px;
+  padding: 36px 40px 36px;
+  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(184,134,11,0.06);
+}
+
+/* ---------- HEADING ---------- */
+.itd__heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #B8860B;
+  text-align: center;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+}
+
+.itd__sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: rgba(194, 178, 128, 0.75);
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+/* Formal section break below subtitle */
+.itd__divider {
+  height: 1px;
+  background: rgba(194, 178, 128, 0.15);
+  border: none;
+  margin: 0 0 24px;
+}
+
+/* ---------- GRID ---------- */
+.itd__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+/* ---------- FIELD ---------- */
+.itd__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.itd__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(194, 178, 128, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+  transition: color 0.2s ease;
+}
+
+/* ---------- INPUT (Duration) ---------- */
+.itd__input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(194, 178, 128, 0.15);
+  border-radius: 8px;
+  padding: 12px 16px 12px 44px;
+  color: #FAF6EE;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.itd__input::placeholder {
+  color: #6B5B47;
+}
+
+.itd__input:hover {
+  border-color: rgba(184, 134, 11, 0.35);
+}
+
+.itd__input:focus {
+  border-color: rgba(184, 134, 11, 0.6);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+}
+
+/* Duration wrapper with calendar icon */
+.itd__input-wrapper {
+  position: relative;
+}
+
+.itd__input-wrapper .itd__field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #B8860B;
+  opacity: 0.6;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Number input — hide browser spin buttons */
+.itd__input[type="number"]::-webkit-inner-spin-button,
+.itd__input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.itd__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ---------- SUBMIT — Option A: Restrained Luxury ---------- */
+.itd__submit {
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px 28px;
+  background: #2C1A0E;
+  border: 1px solid #B8860B;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #B8860B;
+  letter-spacing: 0.06em;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.itd__submit:hover {
+  background: #B8860B;
+  color: #1A0F08;
+  box-shadow: 0 8px 28px rgba(184, 134, 11, 0.28);
+}
+
+/* Arrow nudge on hover */
+.itd__submit .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  margin-left: 6px;
+}
+
+.itd__submit:hover .arrow {
+  transform: translateX(4px);
+}
+
+.itd__submit:active {
+  transform: translateY(1px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px) {
+  .itd__card {
+    padding: 40px 24px 36px;
+  }
+
+  .itd__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .itd__heading {
+    font-size: 1.9rem;
+  }
+}

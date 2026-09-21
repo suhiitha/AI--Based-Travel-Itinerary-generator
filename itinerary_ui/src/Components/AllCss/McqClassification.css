@@ -1,0 +1,192 @@
+/* ============================================================
+   PAYANA — McqClassification  (Manual Trip Planner Form)
+   Dark navy design system — matches ItineraryDisplay
+   ============================================================ */
+
+/* ---------- PAGE WRAPPER ---------- */
+.mcqc {
+  min-height: 100vh;
+  background: #0a1628;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8e2d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Grid overlay */
+.mcqc::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(180, 155, 90, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 155, 90, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient orbs */
+.mcqc::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 45% at 85% 8%, rgba(212, 168, 67, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 50% at 8% 88%, rgba(30, 80, 160, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- FORM CARD ---------- */
+.mcqc__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(180, 155, 90, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* ---------- HEADING ---------- */
+.mcqc__heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #d4a843;
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.mcqc__subheading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+/* ---------- FORM FIELD GROUP ---------- */
+.mcqc__field {
+  margin-bottom: 20px;
+}
+
+.mcqc__label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+/* ---------- SELECT DROPDOWN ---------- */
+.mcqc__select {
+  width: 100%;
+  padding: 12px 40px 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(180, 155, 90, 0.2);
+  border-radius: 10px;
+  color: #e8e2d6;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23d4a843' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.mcqc__select:focus {
+  border-color: #d4a843;
+  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.12);
+}
+
+.mcqc__select option {
+  background: #0f1f35;
+  color: #e8e2d6;
+}
+
+/* ---------- NUMBER INPUT ---------- */
+.mcqc__input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(180, 155, 90, 0.2);
+  border-radius: 10px;
+  color: #e8e2d6;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.mcqc__input:focus {
+  border-color: #d4a843;
+  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.12);
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.mcqc__submit {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0a1628;
+  background: linear-gradient(135deg, #d4a843 0%, #e6c36a 100%);
+  transition: all 0.3s ease-out;
+}
+
+.mcqc__submit:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.25);
+}
+
+.mcqc__submit:active {
+  transform: translateY(0);
+}
+
+/* ---------- DIVIDER ---------- */
+.mcqc__divider {
+  height: 1px;
+  background: rgba(180, 155, 90, 0.12);
+  margin: 8px 0 20px;
+  border: none;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .mcqc {
+    padding: 1rem;
+  }
+
+  .mcqc__card {
+    padding: 2rem 1.25rem;
+  }
+
+  .mcqc__heading {
+    font-size: 1.8rem;
+  }
+}

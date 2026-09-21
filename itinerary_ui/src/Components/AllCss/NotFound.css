@@ -1,0 +1,130 @@
+/* ── NotFound 404 page ── */
+
+.nf {
+  min-height: 100vh;
+  background: #0a1628;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8e2d6;
+}
+
+/* Grid overlay */
+.nf::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(180, 155, 90, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 155, 90, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative orbs */
+.nf__orb--gold {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: -80px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.08), transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.nf__orb--blue {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  bottom: -60px;
+  left: -60px;
+  background: radial-gradient(circle, rgba(80, 130, 220, 0.06), transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+/* Content wrapper */
+.nf__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Giant 404 watermark */
+.nf__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14rem;
+  font-weight: 700;
+  color: #d4a843;
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* Title */
+.nf__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #f0ece4;
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtitle */
+.nf__subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 36px;
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA button */
+.nf__btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4a843, #e6c36a);
+  color: #0a1628;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.nf__btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.25);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .nf__watermark {
+    font-size: 8rem;
+  }
+
+  .nf__title {
+    font-size: 2rem;
+  }
+}

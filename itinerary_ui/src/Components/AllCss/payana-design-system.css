@@ -1,0 +1,27 @@
+/* ============================================================
+   PAYANA DESIGN SYSTEM
+   Premium travel app design tokens & base styles
+   ============================================================ */
+
+:root {
+  --payana-deep: #0D1B2A;
+  --payana-navy: #1B2E45;
+  --payana-gold: #C9A84C;
+  --payana-gold-light: #E8C97A;
+  --payana-cream: #F5F0E8;
+  --payana-mist: #8BA5B8;
+  --payana-glass: rgba(27,46,69,0.6);
+  --payana-border: rgba(201,168,76,0.2);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius-card: 16px;
+  --transition-base: 300ms ease-out;
+  --glow-gold: 0 0 20px rgba(201,168,76,0.15);
+}
+
+body {
+  background-color: var(--payana-deep);
+  color: var(--payana-cream);
+  font-family: var(--font-body);
+  margin: 0;
+}

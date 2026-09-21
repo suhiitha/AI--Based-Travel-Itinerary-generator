@@ -1,0 +1,265 @@
+.cinematic-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000;
+  z-index: 5;
+}
+
+.cinematic-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.cinematic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.5) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cinematic-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  z-index: 10;
+}
+
+.scene-text-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: auto;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scene-text-container.left {
+  left: 8vw;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.scene-text-container.right {
+  right: 8vw;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.scene-label-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.scene-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #d4a843;
+}
+
+.scene-label-rule {
+  width: 32px;
+  height: 1px;
+  background-color: rgba(212, 168, 67, 0.5);
+}
+
+.scene-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: white;
+  margin: 0;
+}
+
+.italic-gold {
+  color: #e8c97a;
+  font-style: italic;
+}
+
+.scene-location {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+}
+
+.scene-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.btn-gold-filled {
+  background: #d4a843;
+  color: #0a1628;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+.btn-gold-filled:hover {
+  filter: brightness(1.1);
+}
+
+.btn-ghost-underline {
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 0 0 4px 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.btn-ghost-underline:hover {
+  border-bottom-color: white;
+}
+
+/* Brand Lockup Bottom Right */
+.brand-lockup {
+  position: absolute;
+  bottom: 40px;
+  right: 8vw;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.brand-lockup-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: #d4a843;
+  margin: 0;
+  line-height: 1;
+}
+
+.brand-lockup-rule {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(212, 168, 67, 0.4);
+  margin: 6px 0;
+}
+
+.brand-lockup-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+}
+
+/* Progress Dots Bottom Center */
+.progress-dots {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.progress-dot {
+  height: 4px;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+
+.progress-dot.active {
+  width: 32px;
+  background-color: #d4a843;
+  opacity: 1;
+}
+
+.progress-dot.inactive {
+  width: 20px;
+  background-color: white;
+  opacity: 0.25;
+}
+
+.reveal-sequence {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: white;
+  text-align: center;
+}
+
+.reveal-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.reveal-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.scroll-indicator {
+  color: white;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.blackout-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 20;
+  pointer-events: none;
+}

@@ -1,0 +1,218 @@
+/* ============================================================
+   PAYANA — High-End Redesign Navbar (authenticated user shell)
+   ============================================================ */
+
+.pnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: rgba(44, 26, 14, 0.85); /* #2C1A0E at 85% */
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.4); /* #B8860B at 40% */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-family: 'DM Sans', sans-serif;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.pnav--scrolled {
+  box-shadow: 0 4px 24px rgba(28, 15, 7, 0.4);
+  background: rgba(44, 26, 14, 0.95);
+}
+
+/* Logo */
+.pnav__logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; /* Larger */
+  font-style: italic;
+  font-weight: 600;
+  color: #B8860B; /* Antique Gold */
+  text-decoration: none;
+  letter-spacing: 0.04em; /* Subtle letter-spacing */
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pnav__logo:hover {
+  opacity: 0.85;
+}
+
+/* Desktop links */
+.pnav__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pnav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #F5EDD6;
+  text-decoration: none;
+  border-radius: 0;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.pnav__link:hover {
+  color: #FAF6EE;
+}
+
+/* Terracotta underline on hover drawing left-to-right */
+.pnav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #8B2E16; /* Terracotta */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pnav__link:hover::after,
+.pnav__link--active::after {
+  transform: scaleX(1);
+}
+
+.pnav__link--active {
+  color: #B8860B;
+}
+
+.pnav__link--active::after {
+  background-color: #B8860B; /* Gold underline for active */
+}
+
+.pnav__link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Logout button */
+.pnav__logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #F5EDD6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.pnav__logout:hover {
+  color: #FAF6EE;
+}
+
+.pnav__logout::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #8B2E16;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pnav__logout:hover::after {
+  transform: scaleX(1);
+}
+
+.pnav__logout svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Hamburger */
+.pnav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #F5EDD6;
+  transition: color 0.2s;
+}
+
+.pnav__hamburger:hover {
+  color: #B8860B;
+}
+
+.pnav__hamburger svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile dropdown */
+.pnav__mobile {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(44, 26, 14, 0.98);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.4);
+  z-index: 999;
+  padding: 20px 40px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pnav__mobile--open {
+  display: flex;
+}
+
+/* Content offset */
+.pnav__body {
+  padding-top: 70px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .pnav {
+    padding: 0 20px;
+  }
+
+  .pnav__links {
+    display: none;
+  }
+
+  .pnav__hamburger {
+    display: block;
+  }
+
+  .pnav__mobile {
+    padding: 20px;
+  }
+}

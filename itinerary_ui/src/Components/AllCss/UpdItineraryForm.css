@@ -1,0 +1,327 @@
+/* UpdItineraryForm.css */
+
+.upd-form__card {
+  background: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  color: #fff;
+}
+
+.upd-form__header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.upd-form__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.upd-form__subtitle {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 16px;
+}
+
+.upd-form__divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), #4ade80);
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.upd-form__section {
+  margin-bottom: 24px;
+}
+
+.upd-form__section-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upd-form__field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upd-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.upd-form__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #1e1e2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.upd-form__input-wrapper:focus-within {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-left-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.upd-form__icon {
+  position: absolute;
+  left: 14px;
+  color: #888;
+  font-size: 18px;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.upd-form__input-wrapper:focus-within .upd-form__icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.upd-form__input,
+.upd-form__select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 20px 14px 8px 44px; /* Space for floating label and icon */
+  outline: none;
+  height: 56px;
+  box-sizing: border-box;
+}
+
+.upd-form__select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.upd-form__select option {
+  background: #1e1e2e;
+  color: #fff;
+}
+
+.upd-form__label {
+  position: absolute;
+  left: 44px;
+  top: 18px;
+  font-size: 14px;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.upd-form__input:focus ~ .upd-form__label,
+.upd-form__input:not(:placeholder-shown) ~ .upd-form__label,
+.upd-form__select:focus ~ .upd-form__label,
+.upd-form__select:valid ~ .upd-form__label {
+  top: 6px;
+  font-size: 11px;
+  color: #a0a0a0;
+}
+
+.upd-form__input-wrapper:focus-within .upd-form__label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.upd-form__chevron {
+  position: absolute;
+  right: 14px;
+  color: #888;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.upd-form__input-wrapper:focus-within .upd-form__chevron {
+  transform: rotate(180deg);
+}
+
+/* Image Upload Zone */
+.upd-form__upload-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 32px 16px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.upd-form__upload-zone:hover,
+.upd-form__upload-zone--drag-active {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.upd-form__upload-icon {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+}
+
+.upd-form__upload-text {
+  font-size: 14px;
+  color: #bbb;
+  margin: 0;
+}
+
+.upd-form__upload-subtext {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.upd-form__file-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upd-form__preview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #1e1e2e;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.upd-form__preview-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.upd-form__preview-info {
+  flex: 1;
+}
+
+.upd-form__preview-name {
+  font-size: 14px;
+  color: #fff;
+  margin: 0 0 4px;
+  word-break: break-all;
+}
+
+.upd-form__preview-remove {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upd-form__preview-remove:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* Coordinates */
+.upd-form__coords-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.upd-form__coords-row > div {
+  flex: 1;
+}
+
+.upd-form__auto-detect {
+  background: rgba(108, 99, 255, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  padding: 0 16px;
+  height: 56px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.upd-form__auto-detect:hover {
+  background: rgba(108, 99, 255, 0.25);
+  color: #fff;
+}
+
+/* Submit Button */
+.upd-form__submit {
+  width: 100%;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  margin-top: 16px;
+}
+
+.upd-form__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+}
+
+.upd-form__cancel {
+  width: 100%;
+  background: transparent;
+  color: #888;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.2s ease;
+}
+
+.upd-form__cancel:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* Placeholder fix for custom dropdowns */
+.upd-form__select:invalid {
+  color: transparent;
+}

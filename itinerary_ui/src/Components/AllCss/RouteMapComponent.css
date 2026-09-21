@@ -1,0 +1,144 @@
+/* ── RouteMapComponent — dark modal-interior styling ── */
+
+.rmap {
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8e2d6;
+}
+
+/* Empty-state message */
+.rmap__empty {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #d4a843;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8e2d6;
+  font-size: 0.88rem;
+}
+
+/* Map iframe wrapper */
+.rmap__iframe-wrap {
+  width: 100%;
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid rgba(180, 155, 90, 0.2);
+}
+
+.rmap__iframe-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Section heading */
+.rmap__locations-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 16px 0 8px;
+}
+
+/* Locations list */
+.rmap__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.rmap__list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.rmap__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rmap__list::-webkit-scrollbar-thumb {
+  background: #d4a843;
+  border-radius: 4px;
+}
+
+/* Individual list item */
+.rmap__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: border-left 0.2s;
+}
+
+.rmap__list-item:hover {
+  border-left: 3px solid #d4a843;
+}
+
+/* Place name & district */
+.rmap__place-name {
+  font-weight: 500;
+  color: #e8e2d6;
+  font-size: 0.88rem;
+}
+
+.rmap__place-district {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Map pin badge link */
+.rmap__map-link {
+  background: rgba(212, 168, 67, 0.15);
+  border: 1px solid rgba(212, 168, 67, 0.25);
+  color: #d4a843;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.rmap__map-link:hover {
+  background: rgba(212, 168, 67, 0.25);
+}
+
+/* Action buttons row */
+.rmap__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.rmap__action-link {
+  background: none;
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  color: #d4a843;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.rmap__action-link:hover {
+  background: rgba(212, 168, 67, 0.08);
+  border-color: rgba(212, 168, 67, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .rmap__iframe-wrap {
+    height: 250px;
+  }
+}
